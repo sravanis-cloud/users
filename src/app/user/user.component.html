@@ -1,0 +1,16 @@
+
+<h1>
+    Welcome to {{username}}
+  </h1>
+<div class="container" >
+ <!--<div [innerHTML]="user | json"></div>-->
+<ul class="list-group" >
+ <li class="list-group-item list-group-item-action list-group-item-success"> {{user.followers_url}}</li>
+<li class="list-group-item list-group-item-action list-group-item-info">{{user.gists_url}}</li>
+<li class="list-group-item list-group-item-action list-group-item-warning">{{user.subscriptions_url}}</li>
+<li class="list-group-item list-group-item-action list-group-item-danger">{{user.organizations_url}}</li>
+<li class="list-group-item list-group-item-action list-group-item-light">{{user.repos_url}}</li>
+<li class="list-group-item list-group-item-action list-group-item-dark">{{user.events_url}}</li>
+</ul>
+<a [routerLink]="['/usersList']">Back to List</a>
+</div>

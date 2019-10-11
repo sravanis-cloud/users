@@ -1,0 +1,29 @@
+<h1>
+    Welcome to users!!
+  </h1>
+ 
+<div class="container">  
+    <input type="text" class="form-control" placeholder="Search User here..." id="usr" [(ngModel)]="searchUser">
+   
+  <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+          <th>S.no</th>
+          <th>User</th>
+          
+          <th>url</th>
+          <th>site admin</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList  | filter:searchUser; let i = index">
+        <td>{{ i+1 }}</td>  
+        <td><a [routerLink]="['/user', user.login]">{{ user.login }}</a></td>
+      
+        <td>{{ user.url }}</td>
+        <td>{{user.site_admin}}</td>
+      </tr>
+      <!--<tr *ngIf="usersList.length==0">No Search Found</tr>-->
+    </tbody>
+  </table>
+</div>
